@@ -13,6 +13,8 @@ interface SplitOptions<T> {
   mapper?: ((e: string, i: number, a: string[]) => T) | false;
 }
 
+const DAY = 4;
+
 export function parseInput(): number[];
 export function parseInput(options: { split: false }): string;
 export function parseInput(options: {
@@ -27,7 +29,7 @@ export function parseInput<T>(options: { split: SplitOptions<T> }): T[];
 export function parseInput<T>({
   split,
 }: { split?: SplitOptions<T> | false } = {}) {
-  const input = readFileSync(`./src/day${formatDay(3)}/input.txt`, {
+  const input = readFileSync(`./src/day${formatDay(DAY)}/input.txt`, {
     encoding: "utf-8",
   });
 
