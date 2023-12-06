@@ -13,7 +13,7 @@ interface SplitOptions<T> {
   mapper?: ((e: string, i: number, a: string[]) => T) | false;
 }
 
-const DAY = 5;
+const DAY = 6;
 
 export function parseInput(): number[];
 export function parseInput(options: { split: false }): string;

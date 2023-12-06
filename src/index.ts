@@ -1,6 +1,6 @@
 import { formatDay } from "./util";
 
-const day = 5;
+const day = 6;
 const part = 2;
 
 console.log(`Day ${day} | Part ${part}`);
