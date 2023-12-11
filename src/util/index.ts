@@ -1,5 +1,23 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 
+export const clone = (c: object): object => {
+  return JSON.parse(JSON.stringify(c));
+};
+
+export const calculateRectilinearDistance = (
+  a: number[],
+  b: number[],
+): number => {
+  if (a.length === 0 || a.length !== b.length) {
+    return NaN;
+  }
+  let sum = 0.0;
+  for (let i = 0; i < a.length; ++i) {
+    sum += Math.abs(a[i] - b[i]);
+  }
+  return sum;
+};
+
 export const formatDay = (day: number | string) =>
   day.toString().padStart(2, '0');
 
@@ -48,6 +66,7 @@ const genTemplate = (
   part: 1 | 2,
 ) => `import { parseInput } from '../util/index.js';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const input = parseInput();
 
 // TODO: Complete Part ${part}

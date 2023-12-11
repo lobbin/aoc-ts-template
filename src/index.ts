@@ -1,4 +1,4 @@
-import { formatDay } from './util/index.js';
+import { formatDay, setupDay } from './util/index.js';
 import commandLineArgs from 'command-line-args';
 
 const optionDefinitions = [
@@ -31,5 +31,9 @@ const validate = (type: 'day' | 'part', num: number, max: number) => {
 
 validate('day', day, 25);
 validate('part', part, 2);
+
+for (let index = 0; index < 25; index++) {
+  setupDay(index + 1);
+}
 
 outputSolution(part);
