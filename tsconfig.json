@@ -1,18 +1,15 @@
 {
-	"compilerOptions": {
-		"strict": true,
+  "extends": "./node_modules/gts/tsconfig-google.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "build",
     "module": "ES2022",
-    "moduleResolution": "node",
-		"target": "ES2022",
-		"lib": ["ES2022"],
-    "sourceMap": false,
-    "inlineSourceMap": true,
-    "sourceRoot": "./src",
-		"outDir": "./dist",
-		"declaration": false,
-		"removeComments": false,
-		"alwaysStrict": true,
-		"allowSyntheticDefaultImports": true,
-		"pretty": true
-	}
+    "moduleResolution": "Node",
+    "target": "ES2022",
+    "lib": ["ES2023"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts"
+  ],
 }

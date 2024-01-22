@@ -1,4 +1,4 @@
-import { parseInput } from '../util/index.js';
+import {parseInput} from '../util/index.js';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const input = parseInput();

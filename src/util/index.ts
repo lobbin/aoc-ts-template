@@ -1,4 +1,4 @@
-import { mkdirSync, readFileSync, writeFileSync } from 'fs';
+import {mkdirSync, readFileSync, writeFileSync} from 'fs';
 
 export const clone = (c: object): object => {
   return JSON.parse(JSON.stringify(c));
@@ -6,7 +6,7 @@ export const clone = (c: object): object => {
 
 export const calculateRectilinearDistance = (
   a: number[],
-  b: number[],
+  b: number[]
 ): number => {
   if (a.length === 0 || a.length !== b.length) {
     return NaN;
@@ -32,24 +32,22 @@ type SplitOptions<T> = {
 };
 
 export function parseInput(): number[];
-export function parseInput(options: { split: false }): string;
+export function parseInput(options: {split: false}): string;
 export function parseInput(options: {
-  split: { delimiter?: string; mapper: false };
+  split: {delimiter?: string; mapper: false};
 }): string[];
-export function parseInput(options: { split: { delimiter: string } }): number[];
-export function parseInput<T>(options: { split: SplitOptions<T> }): T[];
+export function parseInput(options: {split: {delimiter: string}}): number[];
+export function parseInput<T>(options: {split: SplitOptions<T>}): T[];
 /**
  * Parse the input from {day}/input.txt
  * @param {SplitOptions} [split]
  */
-export function parseInput<T>({
-  split,
-}: { split?: SplitOptions<T> | false } = {}) {
+export function parseInput<T>({split}: {split?: SplitOptions<T> | false} = {}) {
   const input = readFileSync(
     `./src/day${formatDay(process.env.npm_config_day!)}/input.txt`,
     {
       encoding: 'utf-8',
-    },
+    }
   );
 
   if (split === false) return input;
@@ -63,8 +61,8 @@ export function parseInput<T>({
 }
 
 const genTemplate = (
-  part: 1 | 2,
-) => `import { parseInput } from '../util/index.js';
+  part: 1 | 2
+) => `import {parseInput} from '../util/index.js';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const input = parseInput();
